@@ -7,6 +7,9 @@
 }
 .base-accordion {
     width: 200px;
+    height: 100%;
+    padding-bottom: 20px;
+    overflow: auto;
 }
 .base-accordionTitle {
     margin: 0;
