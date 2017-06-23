@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import Perf from 'react-addons-perf';
 import './App.css';
 import Accordion from './components/Accordion';
+const win = window;
+win.Perf = Perf;
 const data = [{
   title: '简介',
   list: [{

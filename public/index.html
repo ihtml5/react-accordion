@@ -221,7 +221,7 @@
   <span class="pl-smi">ebapBase</span>.<span class="pl-en">regesiter</span>(moduleKey, <span class="pl-c1">module</span>); </pre>
                   </div>
                 </li>
-                <li id="#base-apiUtils">
+                <li id="base-apiUtils">
                   <p><strong>ebapBase.utils</strong></p>
                   <blockquote>
                     <p>ebapBase的公共函数，供内部和外部调用</p>
@@ -277,7 +277,7 @@
                   <p>ebapBase.utils.eventProxy</p>
                   <p>事件代理 参数可以是一个对象</p>
                   <div class="highlight highlight-source-js">
-                    <pre>  {
+      <pre>{
     context<span class="pl-k">:</span> <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>...<span class="pl-pds">'</span></span>)容器，在那个范围指定冒泡事件
       <span class="pl-c"><span class="pl-c">//</span> 目标节点的标签名</span>
       tagName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>a<span class="pl-pds">'</span></span>,
@@ -285,8 +285,8 @@
       cls<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ebap-edit<span class="pl-pds">'</span></span>,
       <span class="pl-c"><span class="pl-c">//</span> 目标节点的id</span>
       id<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,
-    eventType<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>click<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">//</span> 默认为click事件</span>
-    <span class="pl-en">cb</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">targetInfo</span>) {
+      eventType<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>click<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">//</span> 默认为click事件</span>
+    <span class="pl-en">  cb</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">targetInfo</span>) {
        <span class="pl-c"><span class="pl-c">//</span> 这里的targetInfo多了一个dom属性，指向event.target</span>
     }
   }</pre>
@@ -404,7 +404,6 @@
     del<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>//<span class="pl-pds">'</span></span>
   }</pre>
               </div>
-              <p>list模块需要的各种数据</p>
               <ul>
                 <li>
                   <p>onDrawCell</p>
@@ -470,7 +469,7 @@
               </ol>
               <div class="highlight highlight-source-js">
                 <pre>
-                  <span class="pl-k">var</span> customModal <span class="pl-k">=</span> <span class="pl-smi">ebapBase</span>.<span class="pl-c1">get</span>({
+<span class="pl-k">var</span> customModal <span class="pl-k">=</span> <span class="pl-smi">ebapBase</span>.<span class="pl-c1">get</span>({
     key<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>modal<span class="pl-pds">'</span></span>,
     tplCfg<span class="pl-k">:</span> {
 &nbsp; &nbsp; &nbsp; &nbsp;desc<span class="pl-k">:</span> <span class="pl-smi">resJson</span>.<span class="pl-smi">desc</span>, <span class="pl-c"><span class="pl-c">//</span> 信息描述</span>
@@ -566,23 +565,96 @@
       })
     }
   })</pre></div>
-              <h3>
-                <a id="user-content-message" class="anchor" href="#modules" aria-hidden="true">
-                  <svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16">
-                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-                  </svg>
-                </a>模块之间怎么通信</h3>
-              <ol>
-                <li>
-                  可以通过依赖的方式进行互相访问
-                </li>
-                <li>
-                  通过options.name直接挂载到window下面进行通信
-                </li>
-                <li>
-                  通过自带的自定义事件_on, _once, _trigger进行通信
-                </li>
-              </ol>
+              <h2><a id="user-content-模块之间怎么通信" class="anchor" href="#模块之间怎么通信" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>模块之间怎么通信</h2>
+<ol>
+<li>可以通过依赖的方式进行互相访问</li>
+</ol>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> ebapList <span class="pl-k">=</span> <span class="pl-smi">ebapBase</span>.<span class="pl-c1">get</span>({
+    id<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>list<span class="pl-pds">'</span></span>,
+    key<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,
+    settings<span class="pl-k">:</span> {
+
+    },
+    deps<span class="pl-k">:</span> [{
+        key<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>modal<span class="pl-pds">'</span></span>
+    }],
+    <span class="pl-en">beforeCreate</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">options</span>) {
+        <span class="pl-c"><span class="pl-c">//</span> 默认传入的是组件当前的配置</span>
+        <span class="pl-c"><span class="pl-c">//</span> 依赖分析完成，待调用组件模块前</span>
+    },
+    <span class="pl-en">created</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">comIns</span>) {
+        <span class="pl-c"><span class="pl-c">//</span> 当前的ui组件实例，以miniui为例，指的就是id对应的miniui组件实例</span>
+        <span class="pl-c"><span class="pl-c">//</span> 对于没有id的模块，comIns等于模块实例</span>
+    },
+    <span class="pl-en">mounted</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">moduleIns</span>) {
+        <span class="pl-c"><span class="pl-c">//</span> 已经获取模块，即将返回，在这里可以对模块进行扩展，比如</span>
+        <span class="pl-c"><span class="pl-c">//</span> 如果想访问modal模块，可以这样访问</span>
+        <span class="pl-k">var</span> modalDeps <span class="pl-k">=</span> <span class="pl-smi">moduleIns</span>.<span class="pl-smi">moduleDeps</span>.<span class="pl-smi">modal</span>;
+        <span class="pl-k">return</span> moduleIns;
+    }
+});</pre></div>
+<ol start="2">
+<li>通过options.name直接挂载到window下面进行通信</li>
+</ol>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> ebapList <span class="pl-k">=</span> <span class="pl-smi">ebapBase</span>.<span class="pl-c1">get</span>({
+    id<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>list<span class="pl-pds">'</span></span>,
+    key<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,
+    settings<span class="pl-k">:</span> {
+
+    },
+    name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>list<span class="pl-pds">'</span></span>,
+    deps<span class="pl-k">:</span> [{
+        key<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>modal<span class="pl-pds">'</span></span>,
+        name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>modal<span class="pl-pds">'</span></span>
+    }],
+    <span class="pl-en">beforeCreate</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">options</span>) {
+        <span class="pl-c"><span class="pl-c">//</span> 默认传入的是组件当前的配置</span>
+        <span class="pl-c"><span class="pl-c">//</span> 依赖分析完成，待调用组件模块前</span>
+    },
+    <span class="pl-en">created</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">comIns</span>) {
+        <span class="pl-c"><span class="pl-c">//</span> 当前的ui组件实例，以miniui为例，指的就是id对应的miniui组件实例</span>
+        <span class="pl-c"><span class="pl-c">//</span> 对于没有id的模块，comIns等于模块实例</span>
+    },
+    <span class="pl-en">mounted</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">moduleIns</span>) {
+        <span class="pl-c"><span class="pl-c">//</span> 已经获取模块，即将返回，在这里可以对模块进行扩展，比如</span>
+        <span class="pl-c"><span class="pl-c">//</span> 可以通过window.EBAPLIST$访问list模块，window.EBAPMODAL$访问modal模块</span>
+        <span class="pl-k">return</span> moduleIns;
+    }
+});</pre></div>
+<ol start="3">
+<li>通过自带的自定义事件on,once,trigger进行通信</li>
+</ol>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> ebapList <span class="pl-k">=</span> <span class="pl-smi">ebapBase</span>.<span class="pl-c1">get</span>({
+    id<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>list<span class="pl-pds">'</span></span>,
+    key<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,
+    settings<span class="pl-k">:</span> {
+
+    },
+    deps<span class="pl-k">:</span> [{
+        key<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>modal<span class="pl-pds">'</span></span>,
+        <span class="pl-en">mounted</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">moduleIns</span>) {
+          <span class="pl-c"><span class="pl-c">//</span> modal 绑定隐藏事件</span>
+          <span class="pl-smi">moduleIns</span>.<span class="pl-en">_on</span>(<span class="pl-s"><span class="pl-pds">'</span>hide<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> () {
+            <span class="pl-smi">moduleIns</span>.<span class="pl-en">hide</span>();
+          })
+        }
+    }],
+    <span class="pl-en">beforeCreate</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">options</span>) {
+        <span class="pl-c"><span class="pl-c">//</span> 默认传入的是组件当前的配置</span>
+        <span class="pl-c"><span class="pl-c">//</span> 依赖分析完成，待调用组件模块前</span>
+    },
+    <span class="pl-en">created</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">comIns</span>) {
+        <span class="pl-c"><span class="pl-c">//</span> 当前的ui组件实例，以miniui为例，指的就是id对应的miniui组件实例</span>
+        <span class="pl-c"><span class="pl-c">//</span> 对于没有id的模块，comIns等于模块实例</span>
+    },
+    <span class="pl-en">mounted</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">moduleIns</span>) {
+        <span class="pl-c"><span class="pl-c">//</span> 已经获取模块，即将返回，在这里可以对模块进行扩展，比如</span>
+        <span class="pl-c"><span class="pl-c">//</span> 通知modal模块隐藏</span>
+        <span class="pl-smi">moduleIns</span>.<span class="pl-en">_trigger</span>(<span class="pl-s"><span class="pl-pds">'</span>hide<span class="pl-pds">'</span></span>);
+        <span class="pl-k">var</span> modalDeps <span class="pl-k">=</span> <span class="pl-smi">moduleIns</span>.<span class="pl-smi">moduleDeps</span>.<span class="pl-smi">modal</span>;
+        <span class="pl-k">return</span> moduleIns;
+    }
+});</pre></div>
             </article>
           </div>
         </div>
