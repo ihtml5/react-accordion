@@ -68,7 +68,7 @@ const data = [{
 <td>width</td>
 <td>Number/String</td>
 <td>可选</td>
-<td>100%</td>
+<td>auto</td>
 <td>面板宽度</td>
 </tr>
 </tbody>
